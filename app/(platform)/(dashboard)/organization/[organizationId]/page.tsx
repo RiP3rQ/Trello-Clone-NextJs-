@@ -1,6 +1,8 @@
 "use client";
 
 import { createBoard } from "@/actions/create-board";
+import { FormInput } from "@/components/form/form-input";
+import { FormSubmit } from "@/components/form/form-submit";
 import { Button } from "@/components/ui/button";
 import { useAction } from "@/hooks/use-action";
 
@@ -11,12 +13,11 @@ const OrganizationIdPage = () => {
     },
     onError: (error) => {
       console.log(error);
-      console.log(fieldErrors);
     },
   });
 
   const onSubmit = (formData: FormData) => {
-    const title = formData.get("title") as string;
+    const title = formData.get("Title") as string;
 
     execute({ title });
   };
@@ -24,15 +25,8 @@ const OrganizationIdPage = () => {
   return (
     <div>
       <form action={onSubmit}>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          required
-          placeholder="Enter board name!"
-          className="border-black border p-1"
-        />
-        <Button type="submit">Create</Button>
+        <FormInput id="Title" label="Board title" errors={fieldErrors} />
+        <FormSubmit>Create board</FormSubmit>
       </form>
     </div>
   );

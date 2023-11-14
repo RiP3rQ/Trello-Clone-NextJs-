@@ -15,7 +15,14 @@ export const BoardList = async () => {
     return redirect("/select-org");
   }
 
-  const boards = await db.board.findMany();
+  const boards = await db.board.findMany({
+    where: {
+      orgId,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
 
   return (
     <div className="space-y-4">

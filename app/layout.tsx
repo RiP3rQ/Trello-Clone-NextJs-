@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Trello Clone by RiP3rQ",
-    template: `%s | Trello Clone by RiP3rQ`,
+    default: "Taskify by RiP3rQ",
+    template: `%s | Taskify by RiP3rQ`,
   },
   description: "Fullstack Trello Clone by RiP3rQ",
   icons: [

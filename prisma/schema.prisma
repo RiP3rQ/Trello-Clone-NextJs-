@@ -21,6 +21,39 @@ model Board {
   imageUserName       String @db.Text
   imageLinkHTML       String @db.Text
 
+  lists               List[]
+
   createdAt           DateTime @default(now())
   updatedAt           DateTime @updatedAt
+}
+
+model List {
+  id                  String @id @default(uuid())
+  title               String
+  order               Int
+
+  boardId             String
+  board               Board  @relation(fields: [boardId], references: [id], onDelete: Cascade)
+
+  cards               Card[]
+
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([boardId])
+}
+
+model Card {
+  id                  String @id @default(uuid())
+  title               String
+  description         String? @db.Text
+  order               Int
+
+  listId              String
+  list                List   @relation(fields: [listId], references: [id], onDelete: Cascade)
+
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([listId])
 }

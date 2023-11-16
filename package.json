@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.27.1",
+    "@hello-pangea/dnd": "^16.3.0",
     "@prisma/client": "^5.6.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-dialog": "^1.0.5",

@@ -3,8 +3,10 @@ import { Info } from "./_components/info";
 import { Suspense } from "react";
 import { BoardList } from "./_components/board-list";
 
-const OrganizationIdPage = () => {
-  const isPro = false;
+import { checkSubscription } from "@/lib/subscription";
+
+const OrganizationIdPage = async () => {
+  const isPro = await checkSubscription();
 
   return (
     <div className="w-full mb-20">

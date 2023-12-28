@@ -3,14 +3,17 @@ import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   return (
-    <div className="fixed bottom-0 w-full p-4 border-t bg-slate-100">
+    <div
+      className="fixed bottom-0 w-full p-4 border-t bg-slate-100"
+      data-testid="footer_wrapper"
+    >
       <div className="md:max-w-screen-2xl mx-auto flex items-center w-full justify-between">
         <Logo />
         <div className="space-x-4 md:block md:w-auto flex items-center justify-between w-full">
-          <Button size="sm" variant="ghost">
+          <Button size="sm" variant="ghost" data-testid="footer_policy_button">
             Privacy Policy
           </Button>
-          <Button size="sm" variant="ghost">
+          <Button size="sm" variant="ghost" data-testid="footer_terms_button">
             Terms of Service
           </Button>
         </div>
